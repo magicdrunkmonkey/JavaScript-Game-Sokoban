@@ -45,7 +45,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
 
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
 //document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
-document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);
+document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
 /*  Attempt 1 Board Funkar inte
 function drawBoardTest1(tileMapTest1)
 {
