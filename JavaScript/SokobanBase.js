@@ -21,8 +21,8 @@ var Entities = {
     G = Goal area for the blocks
 */
 var tileMap01 = {
-  width: 19,
-  height: 16,
+  width: 19,        //Spelbrädan har 19 kolumner
+  height: 16,       //Spelbrädan har 16 rader
   mapGrid: [
     [
       [" "],
