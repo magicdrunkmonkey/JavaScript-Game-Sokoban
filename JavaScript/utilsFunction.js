@@ -7,15 +7,15 @@ var player;
 //      a) Give them an id and CSS.
 //      b) Append them into your map element.
 
-function drawBoard(tileMap) {
+function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
     for (let x = 0; x < tileMap.width; x++) {
         for (let y = 0; y < tileMap.height; y++) {
-            console.log("x: " + x + " y: " + y);
+            console.log("x: " + x + " y: " + y);      //Visar bitarna i webläsar konsollen
         }
     }
 }
 
-drawBoard(tileMap01);
+drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
 
 
 
