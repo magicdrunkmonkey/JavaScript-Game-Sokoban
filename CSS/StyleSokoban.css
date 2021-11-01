@@ -1,4 +1,9 @@
-﻿body
+﻿/*
+    Tips:
+    • Use CSS to present the different types of tiles on the map (Ex. .player .wall).
+*/
+
+body
 {
     .player {
 
