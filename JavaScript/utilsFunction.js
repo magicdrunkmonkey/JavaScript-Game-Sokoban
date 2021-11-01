@@ -24,7 +24,7 @@ export default class MapGrid
 
 
 
-var mapElements = [];
+//var mapElements = [];
 // Från demo med Simon
 function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
     for (let x = 0; x < tileMap.width; x++) {
@@ -35,7 +35,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
             console.log("x: " + x + " y: " + y);      //Visar kartpositioner i webläsarens console
             //document.getElementById("map").innerHTML = y;  //Funkar inte
             //mapElements.push(tileMap[x]);    //Funkar inte
-            //document.getElementById("map").innerHTML = tileMap.mapGrid[x][y];
+            //document.getElementById("map").innerHTML = tileMap.mapGrid[x][y]; //Funkar inte
 
         }
         //document.getElementById("map").innerHTML = mapElements;
@@ -44,7 +44,8 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
 }
 
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
-document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
+//document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
+document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);
 /*  Attempt 1 Board Funkar inte
 function drawBoardTest1(tileMapTest1)
 {

@@ -75,6 +75,6 @@ export default class mapElements {
             if (winningCombination && winningCombination.includes(i)) {
                 tile.classList.add("board__tile--winner");
             }
-        }*/
+        }
     }
-}
+}*/
