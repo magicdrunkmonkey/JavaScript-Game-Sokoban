@@ -1,4 +1,8 @@
 // JavaScript source code
+
+// Store the players X & Y position in global variables.
+var player;
+
 // 5. Create a function to generate the elements that will represent the tiles from the map array.
 //      a) Give them an id and CSS.
 //      b) Append them into your map element.
@@ -9,4 +13,24 @@ function drawBoard(tileMap) {
             console.log("x: " + x + " y: " + y);
         }
     }
+}
+
+drawBoard(tileMap01);
+
+
+
+function moveUp() {
+     
+}
+
+function moveDown() {
+     
+}
+
+function moveleft() {
+     
+}
+
+function moveright() {
+     
 }

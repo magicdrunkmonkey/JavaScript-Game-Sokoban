@@ -3,8 +3,24 @@
     • Use CSS to present the different types of tiles on the map (Ex. .player .wall).
 */
 
-body
-{
+#map {
+    border: 10px solid black;
+    width: 19ch;
+    height: 16ch;    
+    display: flex;
+    flex-direction: column;
+}
+
+.board {
+    display: grid;
+    background: greenyellow;
+    gap: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
     .player {
 
     }
@@ -20,4 +36,3 @@ body
     .goal {
 
     }
-}
