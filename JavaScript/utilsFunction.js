@@ -34,15 +34,17 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
         for (let y = 0; y < tileMap.height; y++) {
             console.log("x: " + x + " y: " + y);      //Visar kartpositioner i webläsarens console
             //document.getElementById("map").innerHTML = y;  //Funkar inte
-            mapElements.push(tileMap[x]);            
+            //mapElements.push(tileMap[x]);    //Funkar inte
+            //document.getElementById("map").innerHTML = tileMap.mapGrid[x][y];
+
         }
-        document.getElementById("map").innerHTML = mapElements;
+        //document.getElementById("map").innerHTML = mapElements;
     }
     //document.getElementById("map").innerHTML = mapElements;
 }
 
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
-
+document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
 /*  Attempt 1 Board Funkar inte
 function drawBoardTest1(tileMapTest1)
 {

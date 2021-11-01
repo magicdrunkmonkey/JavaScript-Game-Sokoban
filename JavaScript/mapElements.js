@@ -1,3 +1,4 @@
+/*
 export default class mapElements {
     constructor(root) {
         this.root = root;
