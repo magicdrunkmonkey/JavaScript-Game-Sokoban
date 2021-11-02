@@ -39,7 +39,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
         
         for (let y = 0; y < tileMap.height; y++) {
             console.log("id= x"+x+"y"+y);      //Skapar id med oordinater
-            mapContainer.append("<div id= x"+x+"y"+y+">"+tileMap.mapGrid[x][y]+"</div>");
+            //mapContainer.append("<div id= x"+x+"y"+y+">"+tileMap.mapGrid[x][y]+"</div>"); //Funkar inte
 
             //MISSLYCKADE FÖRSÖK
             //document.getElementById("map").innerHTML = y;  //Funkar inte
@@ -50,7 +50,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
     }
     //document.getElementById("map").innerHTML = mapElements;
 }
-document.getElementById("map").innerHTML = mapContainer;
+//document.getElementById("map").innerHTML = drawBoard(tileMap01); //Funkar inte
 
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
 
