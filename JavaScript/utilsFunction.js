@@ -22,17 +22,16 @@ export default class MapGrid
 //      a) Give them an id and CSS.
 //      b) Append them into your map element.
 
+// Use the multidimensional map array index´s as X & Y coordinates and assign 
+// them as id´s on the html elements in the map (Ex. id=”x3y7”).
 
-
-//var mapElements = [];
-// Från demo med Simon
 function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
     for (let x = 0; x < tileMap.width; x++) {
         //document.getElementById("map").innerHTML = x; //Funkar inte
         let mapElements = [];
         
         for (let y = 0; y < tileMap.height; y++) {
-            console.log("x: " + x + " y: " + y);      //Visar kartpositioner i webläsarens console
+            console.log("id= x"+x+"y"+y);      //Skapar id med coordinater
             //document.getElementById("map").innerHTML = y;  //Funkar inte
             //mapElements.push(tileMap[x]);    //Funkar inte
             //document.getElementById("map").innerHTML = tileMap.mapGrid[x][y]; //Funkar inte
@@ -46,6 +45,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
 //document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
 document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
+//document.getElementById("map").innerHTML = JSON.stringify(drawBoard(tileMap01)); //Funkar inte
 /*  Attempt 1 Board Funkar inte
 function drawBoardTest1(tileMapTest1)
 {
