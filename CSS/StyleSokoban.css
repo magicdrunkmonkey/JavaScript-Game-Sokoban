@@ -6,14 +6,19 @@
     box-sizing: border-box;
 }
 
-/*
+
 #map {
     border: 10px solid black;
+    background: blueviolet;
+    justify-content: center;
+    width: 800px;
     height: 500px;
-    display: flex;
-    flex-direction: column;
-}*/
-
+    display: grid;                          /* Skapar ett rutnät*/      /*Önskar att jag visste om detta sätt att skriva grid tidigare*/
+    flex-grow: 1;                           /* Öka en ruta i taget*/
+    grid-template-columns: repeat(16, 1fr); /* Skapa 16 ckolumner*/
+    grid-template-rows: repeat(19, 1fr);    /* Skapa 19 rader*/
+}
+/*
 .map {
     display: grid;
     background: #e90707;
@@ -22,7 +27,7 @@
     flex-grow: 1;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-}
+}*/
 
 /*
 body {
