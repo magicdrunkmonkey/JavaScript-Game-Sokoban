@@ -61,7 +61,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
     }
     //document.getElementById("map").innerHTML = mapElements;
 }
-//document.getElementById("map").innerHTML = drawBoard(tileMap01); //Funkar inte
+//document.getElementById("map").innerHTML = board; //Funkar inte
 
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
 
