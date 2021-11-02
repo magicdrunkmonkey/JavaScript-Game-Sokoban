@@ -13,8 +13,10 @@ function addNode()  //Experiement att skapa element som har id=" "
 {
     for(let i=0; i < 5; i++)
     {
-        let newDivList = document.createElement("div");
-        document.getElementById("body").append(newDivList);      //Lägger in <div></div> efter </script> längst ned i <body>
+        let newDiv = document.createElement("div");
+        
+        document.getElementById("map").appendChild(newDiv);      //Lägger in <div></div> efter </script> längst ned i <body>
+        
         //document.getElementById("body").insertAdjacentHTML(newDiv);  
     }
     //document.getElementById("body").appendChild(newDiv);
@@ -23,13 +25,13 @@ function addNode()  //Experiement att skapa element som har id=" "
 function createANodeWithId()
 {
     let newDiv = document.createElement("div");
-    newDiv.setAttribute("id","game-board");
+    newDiv.setAttribute("id","game-board");      //Skapar ett id="game-board"
     newDiv.appendChild(addNode());
     document.getElementById("body").append(newDiv);      
 }
 
-createANodeWithId();
-//addNode();
+//createANodeWithId();
+addNode();
 /* Attempt 1 Grid fail : Creating JavaScript constructor
 export default class MapGrid
 {
@@ -81,7 +83,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
 
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
 
-document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
+//document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
 
 //document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
 
