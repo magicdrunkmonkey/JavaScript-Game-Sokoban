@@ -4,9 +4,12 @@
 // Store the players X & Y position in global variables.
 
 //Global variables
-var player_X_position;
-var player_Y_position;
-var mapContainer = [];
+var playerPosition;
+
+//var player_X_position;  //X och Y var för sig ersätts som en koordinat
+//var player_Y_position;
+
+//var mapContainer = [];     //Verkar inte behövas längre
 
 //Functions for functions
 function addNode()  //Experiement att skapa element som har id=" "
@@ -122,6 +125,8 @@ function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som 
             if (tileMap.mapGrid[y][x] == "P") //Ge unik class till spelare
             {                
                 document.getElementById("x"+x+"y"+y).classList.add(Entities.Character);
+                playerPosition = "x"+x+"y"+y;
+                //console.log(playerPosition);         //Funkar ok   //Testar om sparats
             }
             else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor (Boxes) och "box i mål class"
             {                
