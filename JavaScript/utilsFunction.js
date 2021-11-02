@@ -123,7 +123,7 @@ function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som 
             {                
                 document.getElementById("x"+x+"y"+y).classList.add(Entities.Character);
             }
-            else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor (Boxes)
+            else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor (Boxes) och "box i mål class"
             {                
                 document.getElementById("x"+x+"y"+y).classList.add(Entities.Block, Entities.BlockDone);
             }
