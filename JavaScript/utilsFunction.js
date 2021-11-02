@@ -27,7 +27,6 @@ export default class MapGrid
     }
 }*/
 
-
 // ASSSIGNMENT
 // 5. Create a function to generate the elements that will represent the tiles from the map array.
 //      a) Give them an id and CSS.

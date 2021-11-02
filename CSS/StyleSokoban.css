@@ -9,21 +9,22 @@
 #map {
     border: 10px solid black;
     height: 500px;
-
+    display: flex;
+    flex-direction: column;
 }
-
+/*
 body {
     /* Creating a grid in body*/
-    display: grid;
+    /*display: grid;
     
-    /*Går inte att återanvända samma lösning som i CSS uppgiften*//*
+    /*lösning från CSS uppgiften*//*
      grid-template: [header-left] "head head head"  [header-right]
                     [main-left]   "main main aside"   [main-right]
                     [footer-left] "foot foot foot"  [footer-right]
                     / 120px 1fr;
     
-    background-color: rgb(133, 129, 150);*/
-}
+    background-color: rgb(133, 129, 150);
+}*/
 
 /*
 #map {
