@@ -9,7 +9,7 @@ var player_Y_position;
 var mapContainer = [];
 
 //Functions for functions
-function addNode()
+function addNode()  //Experiement att skapa element som har id=" "
      {var newP = document.createElement("p"); 
 	  var textNode = document.createTextNode(" This is a new text node"); 
 	  newP.appendChild(textNode);
