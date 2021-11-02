@@ -44,6 +44,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
             board[x] = tileMap.mapGrid[x][i];
         }
         console.log(board);
+        
         //MISSLYCKADE FÖRSÖK
         //document.getElementById("map").innerHTML = x; //Funkar inte
         //let mapElements = []; //Funkar inte
@@ -67,7 +68,7 @@ drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern til
 
 //document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
 
-//document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
+document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
 
 //document.getElementById("map").innerHTML = JSON.stringify(drawBoard(tileMap01)); //Funkar inte
 /*  Attempt 1 Board Funkar inte
