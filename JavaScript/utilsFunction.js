@@ -22,16 +22,18 @@ function addNode()  //Experiement att skapa element som har id=" "
     //document.getElementById("body").appendChild(newDiv);
 }
 
+
+/* Överblivet experiment
 function createANodeWithId()
 {
     let newDiv = document.createElement("div");
     newDiv.setAttribute("id","game-board");      //Skapar ett id="game-board"
     newDiv.appendChild(addNode());
     document.getElementById("body").append(newDiv);      
-}
+}*/
 
 //createANodeWithId();
-addNode();
+//addNode();   // Flyttade till Game.js
 /* Attempt 1 Grid fail : Creating JavaScript constructor
 export default class MapGrid
 {
@@ -54,19 +56,24 @@ export default class MapGrid
 // them as id´s on the html elements in the map (Ex. id=”x3y7”).
 
 function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
-    for (let x = 0; x < tileMap.width; x++) {
+    for (let x = 0; x < tileMap.width; x++) {  
 
-        var board = new Array(tileMap.width)        //Skapa raden på spelbrädan
-        for (let i=0; i < tileMap.height; i++){     //Loopa igenom raderna 
-            board[x] = tileMap.mapGrid[0][x][i];
-        }
-        console.log(board);
+        //Nedan var ingen lösning 
+        //var board = new Array(tileMap.width)        //Skapa raden på spelbrädan
+        //for (let i=0; i < tileMap.height; i++){     //Loopa igenom raderna /*
+        //    board[x] = tileMap.mapGrid[0][x][i];
+        //}
+        //console.log(board); 
 
         //MISSLYCKADE FÖRSÖK
         //document.getElementById("map").innerHTML = x; //Funkar inte
         //let mapElements = []; //Funkar inte
         
         for (let y = 0; y < tileMap.height; y++) {
+            let newDiv = document.createElement("div");
+            newDiv.setAttribute("id","x"+x+"y"+y);
+            document.getElementById("map").appendChild(newDiv);
+
             console.log("id= x"+x+"y"+y);      //Skapar id med koordinater
             //mapContainer.append("<div id= x"+x+"y"+y+">"+tileMap.mapGrid[x][y]+"</div>"); //Funkar inte
 
@@ -81,7 +88,8 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
 }
 //document.getElementById("map").innerHTML = board; //Funkar inte
 
-drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
+//drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
+                            // Flyttad till Game.js
 
 //document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
 

@@ -1,0 +1,2 @@
+addNode();
+drawBoard(tileMap01);
