@@ -9,8 +9,8 @@
 #map {
     border: 10px solid black;
     height: 500px;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
 }
 /*
 body {

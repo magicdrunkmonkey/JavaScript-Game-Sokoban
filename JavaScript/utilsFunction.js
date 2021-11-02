@@ -14,7 +14,7 @@ function addNode()  //Experiement att skapa element som har id=" "
     for(let i=0; i < 5; i++)
     {
         let newDiv = document.createElement("div");
-        //document.getElementById("body").appendChild(newDiv);      //Lägger in <div></div> efter </script> längst ned i <body>   
+        document.getElementById("body").append(newDiv);      //Lägger in <div></div> efter </script> längst ned i <body>   
     }
     //document.getElementById("body").appendChild(newDiv);
 }
