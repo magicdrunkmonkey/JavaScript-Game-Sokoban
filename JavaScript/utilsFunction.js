@@ -71,8 +71,12 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
         
         for (let y = 0; y < tileMap.height; y++) {
             let newDiv = document.createElement("div");
-            newDiv.setAttribute("id","x"+x+"y"+y);
+            newDiv.setAttribute("id","x"+x+"y"+y);       // Skapar ett unikt ID till div ex: <div id="x2y3"></div>
+
+            //document.getElementById("x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4].toString(); //Funkar inte
+
             document.getElementById("map").appendChild(newDiv);
+            //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4]; //Funkar inte
 
             console.log("id= x"+x+"y"+y);      //Skapar id med koordinater
             //mapContainer.append("<div id= x"+x+"y"+y+">"+tileMap.mapGrid[x][y]+"</div>"); //Funkar inte
@@ -82,10 +86,35 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
             //mapElements.push(tileMap[x]);    //Funkar inte
             //document.getElementById("map").innerHTML = tileMap.mapGrid[x][y]; //Funkar inte
         }
+        //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4];
         //document.getElementById("map").innerHTML = mapElements;
     }
     //document.getElementById("map").innerHTML = mapElements;
 }
+
+function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
+    for (let x = 0; x < tileMap.width; x++) {    
+        
+        for (let y = 0; y < tileMap.height; y++) {
+            /*let newDiv = document.createElement("div");
+            newDiv.setAttribute("id","x"+x+"y"+y);      */ // Skapar ett unikt ID till div ex: <div id="x2y3"></div>
+
+            //document.getElementById("x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4].toString(); //Funkar inte
+
+            document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[x][y];
+            //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4]; //Funkar inte
+
+            //console.log("Insert mappieces in tags done");      //Skapar id med koordinater
+            
+        }
+        //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4];
+        //document.getElementById("map").innerHTML = mapElements;
+    }
+    //document.getElementById("map").innerHTML = mapElements;
+}
+
+
+// FAILED JUNK CODES
 //document.getElementById("map").innerHTML = board; //Funkar inte
 
 //drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
