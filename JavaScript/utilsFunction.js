@@ -8,6 +8,13 @@ var player_X_position;
 var player_Y_position;
 var mapContainer = [];
 
+//Functions for functions
+function addNode()
+     {var newP = document.createElement("p"); 
+	  var textNode = document.createTextNode(" This is a new text node"); 
+	  newP.appendChild(textNode);
+      document.getElementById("firstP").appendChild(newP); }
+
 /* Attempt 1 Grid fail : Creating JavaScript constructor
 export default class MapGrid
 {
@@ -32,20 +39,24 @@ export default class MapGrid
 
 function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
     for (let x = 0; x < tileMap.width; x++) {
-
+        var board = new Array(tileMap.width)
+        for (let i=0; i < tileMap.height; i++){
+            board[x] = tileMap.mapGrid[x][i];
+        }
+        console.log(board);
         //MISSLYCKADE FÖRSÖK
         //document.getElementById("map").innerHTML = x; //Funkar inte
         //let mapElements = []; //Funkar inte
-        
+        /*
         for (let y = 0; y < tileMap.height; y++) {
-            console.log("id= x"+x+"y"+y);      //Skapar id med oordinater
+            console.log("id= x"+x+"y"+y);   */   //Skapar id med oordinater
             //mapContainer.append("<div id= x"+x+"y"+y+">"+tileMap.mapGrid[x][y]+"</div>"); //Funkar inte
 
             //MISSLYCKADE FÖRSÖK
             //document.getElementById("map").innerHTML = y;  //Funkar inte
             //mapElements.push(tileMap[x]);    //Funkar inte
             //document.getElementById("map").innerHTML = tileMap.mapGrid[x][y]; //Funkar inte
-        }
+        //}
         //document.getElementById("map").innerHTML = mapElements;
     }
     //document.getElementById("map").innerHTML = mapElements;
@@ -56,7 +67,7 @@ drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern til
 
 //document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
 
-document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
+//document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
 
 //document.getElementById("map").innerHTML = JSON.stringify(drawBoard(tileMap01)); //Funkar inte
 /*  Attempt 1 Board Funkar inte
