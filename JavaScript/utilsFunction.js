@@ -177,6 +177,43 @@ function drawBoardTest1(tileMapTest1)
 */
 
 
+
+
+function movement() {
+    const log = document.getElementById('entity-player');
+
+    document.addEventListener('keyup', movementChange);
+    
+    function movementChange(e) {
+        //log.textContent += ` ${e.code}`;
+        //console.log(e);
+        e = e || window.event;
+        
+        if (e.keyCode == '38') {
+            // up arrow
+            console.log("up");
+        }
+        else if (e.keyCode == '40') {
+            // down arrow
+            console.log("down")
+        }
+        else if (e.keyCode == '37') {
+        // left arrow
+        console.log("left");
+        }
+        else if (e.keyCode == '39') {
+        // right arrow
+        console.log("right");
+        }
+    }    
+}
+
+// REMOVED CODE ARCHIVED
+/*
+function moveright() {
+     
+}
+
 function moveUp() {
      
 }
@@ -184,11 +221,4 @@ function moveUp() {
 function moveDown() {
      
 }
-
-function moveleft() {
-     
-}
-
-function moveright() {
-     
-}
+*/
