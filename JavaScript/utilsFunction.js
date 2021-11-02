@@ -78,7 +78,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
             document.getElementById("map").appendChild(newDiv);
             //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4]; //Funkar inte
 
-            console.log("id= x"+x+"y"+y);      //Skapar id med koordinater
+            //console.log("id= x"+x+"y"+y);      //Skapar id med koordinater
             //mapContainer.append("<div id= x"+x+"y"+y+">"+tileMap.mapGrid[x][y]+"</div>"); //Funkar inte
 
             //MISSLYCKADE FÖRSÖK
@@ -100,18 +100,45 @@ function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som 
             newDiv.setAttribute("id","x"+x+"y"+y);      */ // Skapar ett unikt ID till div ex: <div id="x2y3"></div>
 
             //document.getElementById("x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4].toString(); //Funkar inte
+            
 
             document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[y][x];
-            //console.log(tileMap);
-            //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4]; //Funkar inte
 
-            //console.log("Insert mappieces in tags done");      //Skapar id med koordinater
+            //Ge klasser till alla fasta object
+            if (tileMap.mapGrid[y][x] == "W") //Ge unik class till alla väggarna
+            {                
+                document.getElementById("x"+x+"y"+y).classList.add(Tiles.Wall);
+            }
+            else if (tileMap.mapGrid[y][x] == " ") //Ge unik class till alla tomrummen
+            {                
+                document.getElementById("x"+x+"y"+y).classList.add(Tiles.Space);
+            }
+            else if (tileMap.mapGrid[y][x] == "G") //Ge unik class till alla målområden
+            {                
+                document.getElementById("x"+x+"y"+y).classList.add(Tiles.Goal);
+            }
+
+            //Ge klasser till alla rörliga object
+            if (tileMap.mapGrid[y][x] == "P") //Ge unik class till spelare
+            {                
+                document.getElementById("x"+x+"y"+y).classList.add(Entities.Character);
+            }
+            else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor (Boxes)
+            {                
+                document.getElementById("x"+x+"y"+y).classList.add(Entities.Block, Entities.BlockDone);
+            }
+            /*else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor om kommer till målområden
+            {                
+                document.getElementById("x"+x+"y"+y).classList.add(Entities.BlockDone);
+            }*/
+
+            //console.log(tileMap);
+            
             
         }
-        //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4];
-        //document.getElementById("map").innerHTML = mapElements;
+        
     }
-    //document.getElementById("map").innerHTML = mapElements;
+    
 }
 
 
@@ -134,6 +161,16 @@ function drawBoardTest1(tileMapTest1)
         document.getElementById("map").innerHTML = tileMapTest1[i]
     }
 }*/
+
+/*
+    • You must use event listeners to handle key presses to make the player move.
+        1. The key press event listener should be able to handle the up, down, left and right 
+        arrow keys
+        2. The normal effect of those keys should be suppressed, to make sure that the 
+        page does not scroll when you press them.
+
+*/
+
 
 function moveUp() {
      

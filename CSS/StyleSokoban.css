@@ -11,7 +11,7 @@
     border: 10px solid black;
     background: blueviolet;
     justify-content: center;
-    width: 800px;
+    width: 700px;
     height: 500px;
     display: grid;                          /* Skapar ett rutnät*/      /*Önskar att jag visste om detta sätt att skriva grid tidigare*/
     flex-grow: 1;                           /* Öka en ruta i taget*/
