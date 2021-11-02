@@ -6,12 +6,24 @@
     box-sizing: border-box;
 }
 
+/*
 #map {
     border: 10px solid black;
     height: 500px;
-    /*display: flex;
-    flex-direction: column;*/
+    display: flex;
+    flex-direction: column;
+}*/
+
+.map {
+    display: grid;
+    background: #e90707;
+    gap: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
+
 /*
 body {
     /* Creating a grid in body*/

@@ -101,7 +101,8 @@ function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som 
 
             //document.getElementById("x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4].toString(); //Funkar inte
 
-            document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[x][y];
+            document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[y][x];
+            //console.log(tileMap);
             //document.getElementById("id","x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4]; //Funkar inte
 
             //console.log("Insert mappieces in tags done");      //Skapar id med koordinater
