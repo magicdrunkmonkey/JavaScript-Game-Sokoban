@@ -13,13 +13,23 @@ function addNode()  //Experiement att skapa element som har id=" "
 {
     for(let i=0; i < 5; i++)
     {
-        let newDiv = document.createElement("div");
-        document.getElementById("body").append(newDiv);      //Lägger in <div></div> efter </script> längst ned i <body>   
+        let newDivList = document.createElement("div");
+        document.getElementById("body").append(newDivList);      //Lägger in <div></div> efter </script> längst ned i <body>
+        //document.getElementById("body").insertAdjacentHTML(newDiv);  
     }
     //document.getElementById("body").appendChild(newDiv);
 }
-addNode();
 
+function createANodeWithId()
+{
+    let newDiv = document.createElement("div");
+    newDiv.setAttribute("id","game-board");
+    newDiv.appendChild(addNode());
+    document.getElementById("body").append(newDiv);      
+}
+
+createANodeWithId();
+//addNode();
 /* Attempt 1 Grid fail : Creating JavaScript constructor
 export default class MapGrid
 {
