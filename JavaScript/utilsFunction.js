@@ -10,10 +10,15 @@ var mapContainer = [];
 
 //Functions for functions
 function addNode()  //Experiement att skapa element som har id=" "
-     {var newP = document.createElement("p"); 
-	  var textNode = document.createTextNode(" This is a new text node"); 
-	  newP.appendChild(textNode);
-      document.getElementById("firstP").appendChild(newP); }
+{
+    for(let i=0; i < 5; i++)
+    {
+        let newDiv = document.createElement("div");
+        //document.getElementById("body").appendChild(newDiv);      //Lägger in <div></div> efter </script> längst ned i <body>   
+    }
+    //document.getElementById("body").appendChild(newDiv);
+}
+addNode();
 
 /* Attempt 1 Grid fail : Creating JavaScript constructor
 export default class MapGrid
@@ -66,9 +71,9 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
 
 drawBoard(tileMap01);     //Kallar på funktionen drawBoard med inparametern tileMap01 som fanns i SokobanBase.js
 
-//document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
+document.getElementById("map").innerHTML = tileMap01.mapGrid[4][4]; //Visar W om står ensamt
 
-document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
+//document.getElementById("map").innerHTML = JSON.stringify(tileMap01.mapGrid);  //Visar kartbitarna på fult sätt
 
 //document.getElementById("map").innerHTML = JSON.stringify(drawBoard(tileMap01)); //Funkar inte
 /*  Attempt 1 Board Funkar inte
