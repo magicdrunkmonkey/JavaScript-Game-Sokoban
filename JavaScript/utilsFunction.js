@@ -208,7 +208,7 @@ function movement() {
 
             //Next position
             playerNextposition = document.getElementById(playerCurrentPosition)
-            let positionArr = playerCurrentPosition.split(".");
+            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
             console.log(positionArr)
             console.log("x: "+ positionArr[1]);
             console.log("y: "+ positionArr[3]);
