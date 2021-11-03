@@ -206,10 +206,11 @@ function movement() {
             //Next position player
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]                       
-            console.log("Player current position last turn: "+positionArr);
+            console.log("Player current position last turn: "+playerNextposition);
+            console.log("Array: Player current position last turn: "+positionArr);
             --positionArr[1];    //Minska X med 1 , ju högre upp desto lägre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
-            console.log("Player next position last turn: "+positionArr);
+            console.log("Player next position last turn: "+playerNextposition);
             //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
 
             //Next position box
