@@ -4,7 +4,8 @@
 // Store the players X & Y position in global variables.
 
 //Global variables
-var playerCurrentPosition;
+//var positionFormat = "\"x\"+x+\"y\"+y";   //Funkar inte
+var playerCurrentPosition;  //Spelarens startpunkt
 var playerNextposition;
 
 //var player_X_position;  //X och Y var för sig ersätts som en koordinat
@@ -75,7 +76,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
         
         for (let y = 0; y < tileMap.height; y++) {
             let newDiv = document.createElement("div");
-            newDiv.setAttribute("id","x"+x+"y"+y);       // Skapar ett unikt ID till div ex: <div id="x2y3"></div>
+            newDiv.setAttribute("id", "x."+x+".y."+y);       // Skapar ett unikt ID till div ex: <div id="x2y3"></div>
 
             //document.getElementById("x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4].toString(); //Funkar inte
 
@@ -106,32 +107,32 @@ function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som 
             //document.getElementById("x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4].toString(); //Funkar inte
             
 
-            document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[y][x];
+            document.getElementById("x."+x+".y."+y).innerHTML = tileMap.mapGrid[y][x];
 
             //Ge klasser till alla fasta object
             if (tileMap.mapGrid[y][x] == "W") //Ge unik class till alla väggarna
             {                
-                document.getElementById("x"+x+"y"+y).classList.add(Tiles.Wall);
+                document.getElementById("x."+x+".y."+y).classList.add(Tiles.Wall);
             }
             else if (tileMap.mapGrid[y][x] == " ") //Ge unik class till alla tomrummen
             {                
-                document.getElementById("x"+x+"y"+y).classList.add(Tiles.Space);
+                document.getElementById("x."+x+".y."+y).classList.add(Tiles.Space);
             }
             else if (tileMap.mapGrid[y][x] == "G") //Ge unik class till alla målområden
             {                
-                document.getElementById("x"+x+"y"+y).classList.add(Tiles.Goal);
+                document.getElementById("x."+x+".y."+y).classList.add(Tiles.Goal);
             }
 
             //Ge klasser till alla rörliga object
             if (tileMap.mapGrid[y][x] == "P") //Ge unik class till spelare
             {                
-                document.getElementById("x"+x+"y"+y).classList.add(Entities.Character);
-                playerPosition = "x"+x+"y"+y;
+                document.getElementById("x."+x+".y."+y).classList.add(Entities.Character);
+                playerPosition = ".x."+x+".y."+y;
                 //console.log(playerPosition);         //Funkar ok   //Testar om sparats
             }
             else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor (Boxes) och "box i mål class"
             {                
-                document.getElementById("x"+x+"y"+y).classList.add(Entities.Block, Entities.BlockDone);
+                document.getElementById("x."+x+".y."+y).classList.add(Entities.Block, Entities.BlockDone);
             }
             /*else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor om kommer till målområden
             {                
@@ -199,6 +200,26 @@ function movement() {
         else if (e.keyCode == '37') {
             // left arrow
             console.log("left");
+
+            //Current position
+            playerCurrentPosition = document.get
+            //document.getElementById(playerCurrentPosition).innerHTML = str.replace("P", " ");
+
+            //Next position
+            playerNextposition = document.getElementById(playerCurrentPosition)
+            //playerCurrentPosition.indexOf("x");
+
+            
+            
+            //Testing values
+            console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
+            console.log("Next position: "+playerNextposition);
+
+            //Delar jag tror jag kommer behöva justera in
+            //document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[y][x];
+            //document.getElementById("x"+x+"y"+y).classList.add(Tiles.Space);
+            //document.getElementById("x"+x+"y"+y).classList.add(Tiles.Wall);
+            //document.getElementById("x"+x+"y"+y).classList.add(Entities.Block, Entities.BlockDone);
         }
         else if (e.keyCode == '39') {
             // right arrow
