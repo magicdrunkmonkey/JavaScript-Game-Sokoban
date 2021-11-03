@@ -239,7 +239,12 @@ function movement() {
             console.log("nextMovePlayer innehåll innan förflyttning: "+nextMovePlayer);  
             console.log("nextMoveBox innehåll innan förflyttning: "+nextMoveBox);          
             
-            if (nextMovePlayer === "B" && nextMoveBox !== "W")
+
+            if (nextMovePlayer === "B" && nextMoveBox === "B")
+            {
+                //Enda lösning jag kom på som lådan att radera andra lådor
+            }
+            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
             {           
                 console.log("Kört ifsatsen nextMovePlayer === B && nextMoveBox !== W");     
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
@@ -250,7 +255,7 @@ function movement() {
                 console.log("Kört klart ifsatsen nextMovePlayer === B && nextMoveBox !== W");
                 //carryingBox == true;
 
-            }
+            }            
             else if (nextMovePlayer === "B" && nextMoveBox == "W")
             {
                 //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
@@ -313,7 +318,11 @@ function movement() {
             let nextMoveBox = document.getElementById(boxNextPosition).textContent;
             console.log("Temp innehåller innanförflyttning sker: "+nextMovePlayer);            
             
-            if (nextMovePlayer === "B" && nextMoveBox !== "W")
+            if (nextMovePlayer === "B" && nextMoveBox === "B")
+            {
+                //Enda lösning jag kom på som lådan att radera andra lådor
+            }
+            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
@@ -372,7 +381,12 @@ function movement() {
             let nextMovePlayer = document.getElementById(playerNextposition).textContent;
             let nextMoveBox = document.getElementById(boxNextPosition).textContent;
             console.log("Temp innehåller innanförflyttning sker: "+nextMovePlayer);            
-            if (nextMovePlayer === "B" && nextMoveBox !== "W")
+            
+            if (nextMovePlayer === "B" && nextMoveBox === "B")
+            {
+                //Enda lösning jag kom på som lådan att radera andra lådor
+            }
+            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
@@ -381,7 +395,11 @@ function movement() {
                 
 
             }
-            else if (nextMovePlayer === "B" && nextMoveBox == "W")
+            else if (nextMovePlayer === "B" && nextMoveBox === "B" )
+            {
+
+            }
+            else if (nextMovePlayer === "B" && nextMoveBox === "W" )
             {
                 //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
             }
@@ -434,7 +452,11 @@ function movement() {
             let nextMovePlayer = document.getElementById(playerNextposition).textContent;
             let nextMoveBox = document.getElementById(boxNextPosition).textContent;
             console.log("Temp innehåller innanförflyttning sker: "+nextMovePlayer);            
-            if (nextMovePlayer === "B" && nextMoveBox !== "W")
+            if (nextMovePlayer === "B" && nextMoveBox === "B")
+            {
+                //Enda lösning jag kom på som lådan att radera andra lådor
+            }
+            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
