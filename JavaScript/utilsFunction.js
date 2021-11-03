@@ -216,8 +216,8 @@ function movement() {
             console.log("Next position: "+playerNextposition);
 
             //Brädspels förflyttning
-            document.getElementById(playerCurrentPosition).innerHTML = " ";
-            document.getElementById(playerNext).innerHTML = "P";
+            document.getElementById(playerCurrentPosition).innerHTML = " ";            
+            document.getElementById(playerNextposition).innerHTML = "P";
             playerCurrentPosition = playerNextposition;
             
             
@@ -231,27 +231,17 @@ function movement() {
             //document.getElementById("x"+x+"y"+y).classList.add(Tiles.Wall);
             //document.getElementById("x"+x+"y"+y).classList.add(Entities.Block, Entities.BlockDone);
 
-
         }
         else if (e.keyCode == '40') {
             // down arrow
             console.log("down")
-        }
-        else if (e.keyCode == '37') {
-            // left arrow
-            console.log("left");
-
-            //Current position
-            //playerCurrentPosition = document.get
-            //playerCurrentPosition.indexOf("x");
-            
 
             //Next position
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
                        
             console.log(positionArr)
-            --positionArr[3];
+            ++positionArr[1];    //Höja X med 1 , ju lägre position desto högre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
             //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
             
@@ -264,10 +254,39 @@ function movement() {
             console.log("Next position: "+playerNextposition);
 
             //Brädspels förflyttning
-            document.getElementById(playerCurrentPosition).innerHTML = " ";
-            document.getElementById(playerNext).innerHTML = "P";
+            document.getElementById(playerCurrentPosition).innerHTML = " ";            
+            document.getElementById(playerNextposition).innerHTML = "P";
             playerCurrentPosition = playerNextposition;
+        }
+        else if (e.keyCode == '37') {
+            // left arrow
+            console.log("left");
+
+            //Current position
+            //playerCurrentPosition = document.get
+            //playerCurrentPosition.indexOf("x");            
+
+            //Next position
+            playerNextposition = document.getElementById(playerCurrentPosition)
+            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
+                       
+            console.log(positionArr)
+            --positionArr[3];    //Minska X med 1 , ju mer vänster desto lägre siffra
+            playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
+            //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
             
+            console.log(positionArr)
+            console.log("PlayerNextPosition: "+playerNextposition);
+            console.log("x: "+ positionArr[1]);
+            console.log("y: "+ positionArr[3]);
+
+            console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
+            console.log("Next position: "+playerNextposition);
+
+            //Brädspels förflyttning
+            document.getElementById(playerCurrentPosition).innerHTML = " ";            
+            document.getElementById(playerNextposition).innerHTML = "P";
+            playerCurrentPosition = playerNextposition;            
             
             //Testing values
             console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
@@ -282,6 +301,27 @@ function movement() {
         else if (e.keyCode == '39') {
             // right arrow
             console.log("right");
+            //Next position
+            playerNextposition = document.getElementById(playerCurrentPosition)
+            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
+                       
+            console.log(positionArr)
+            ++positionArr[3];    //höja Y med 1 , ju mer höger desto högre siffra
+            playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
+            //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
+            
+            console.log(positionArr)
+            console.log("PlayerNextPosition: "+playerNextposition);
+            console.log("x: "+ positionArr[1]);
+            console.log("y: "+ positionArr[3]);
+
+            console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
+            console.log("Next position: "+playerNextposition);
+
+            //Brädspels förflyttning
+            document.getElementById(playerCurrentPosition).innerHTML = " ";            
+            document.getElementById(playerNextposition).innerHTML = "P";
+            playerCurrentPosition = playerNextposition;
         }
     }    
 }
