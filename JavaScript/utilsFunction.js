@@ -215,8 +215,10 @@ function movement() {
             console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
             console.log("Next position: "+playerNextposition);
 
+            let temp = document.getElementById(playerNextposition).textContent;
+            console.log("Temp innehåller: "+temp);
             //Brädspels förflyttning
-            if((document.getElementById(playerNextposition).textContent) !== "w")
+            if (temp != "w")
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
