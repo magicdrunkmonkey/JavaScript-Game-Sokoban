@@ -202,12 +202,16 @@ function movement() {
             console.log("left");
 
             //Current position
-            playerCurrentPosition = document.get
-            //document.getElementById(playerCurrentPosition).innerHTML = str.replace("P", " ");
+            //playerCurrentPosition = document.get
+            //playerCurrentPosition.indexOf("x");
+            
 
             //Next position
             playerNextposition = document.getElementById(playerCurrentPosition)
-            //playerCurrentPosition.indexOf("x");
+
+            //Städa föregående position
+            //document.getElementById(playerCurrentPosition).innerHTML = str.replace("P", " ");
+            
 
             
             
