@@ -216,7 +216,7 @@ function movement() {
             console.log("Next position: "+playerNextposition);
 
             let temp = document.getElementById(playerNextposition).textContent;
-            console.log("Temp innehåller: "+temp);
+            console.log("Temp innehåller innanförflyttning sker: "+temp);
             //Brädspels förflyttning
             if (temp != "w")
             {
