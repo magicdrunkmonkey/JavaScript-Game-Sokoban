@@ -5,7 +5,7 @@
 
 //Global variables
 //var positionFormat = "\"x\"+x+\"y\"+y";   //Funkar inte
-var playerCurrentPosition;  //Spelarens startpunkt
+var playerCurrentPosition = "x.11.y.11";  //Spelarens startpunkt x.11.y.11
 var playerNextposition;
 
 //var player_X_position;  //X och Y var för sig ersätts som en koordinat
@@ -208,6 +208,9 @@ function movement() {
 
             //Next position
             playerNextposition = document.getElementById(playerCurrentPosition)
+            let positionArr = playerCurrentPosition.split(".");
+            console.log("x: "+ positionArr[1]);
+            console.log("y: "+ positionArr[2]);
 
             //Städa föregående position
             //document.getElementById(playerCurrentPosition).innerHTML = str.replace("P", " ");
