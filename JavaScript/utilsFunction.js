@@ -201,8 +201,7 @@ function movement() {
 
             //Current position
             //playerCurrentPosition = document.get
-            //playerCurrentPosition.indexOf("x");
-            
+            //playerCurrentPosition.indexOf("x");            
 
             //Next position player
             playerNextposition = document.getElementById(playerCurrentPosition)
@@ -240,20 +239,23 @@ function movement() {
             console.log("nextMoveBox innehåll innan förflyttning: "+nextMoveBox);          
             
             if (nextMovePlayer === "B" && nextMoveBox !== "W")
-            {                
+            {           
+                console.log("Kört ifsatsen nextMovePlayer === B && nextMoveBox !== W");     
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
                 playerCurrentPosition = playerNextposition;
                 document.getElementById(boxNextPosition).innerHTML = "B";
                 boxCurrentPosition= boxNextPosition;
+                console.log("Kört klart ifsatsen nextMovePlayer === B && nextMoveBox !== W");
 
             }
             else if (nextMovePlayer !== "W")
             {
+                console.log("Kör ifsatsen nextMovePlayer !== W");
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
                 playerCurrentPosition = playerNextposition;
-                console.log("Kört ifsatsen");
+                console.log("Kört klart ifsatsen nextMovePlayer !== W");
             }
             
             //Testing values
