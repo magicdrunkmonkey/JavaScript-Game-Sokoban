@@ -15,8 +15,8 @@
     height: 500px;
     display: grid;                          /* Skapar ett rutnät*/      /*Önskar att jag visste om detta sätt att skriva grid tidigare*/
     flex-grow: 1;                           /* Öka en ruta i taget*/
-    grid-template-columns: repeat(16, 1fr); /* Skapa 16 ckolumner*/
-    grid-template-rows: repeat(19, 1fr);    /* Skapa 19 rader*/
+    grid-template-columns: repeat(19, 1fr); /* Skapa 16 ckolumner*/
+    grid-template-rows: repeat(16, 1fr);    /* Skapa 19 rader*/
 }
 
 

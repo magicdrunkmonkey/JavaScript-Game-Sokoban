@@ -61,7 +61,7 @@ export default class MapGrid
 // them as id´s on the html elements in the map (Ex. id=”x3y7”).
 
 function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
-    for (let x = 0; x < tileMap.width; x++) {  
+    for (let x = 0; x < tileMap.height; x++) {  
 
         //Nedan var ingen lösning 
         //var board = new Array(tileMap.width)        //Skapa raden på spelbrädan
@@ -74,7 +74,7 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
         //document.getElementById("map").innerHTML = x; //Funkar inte
         //let mapElements = []; //Funkar inte
         
-        for (let y = 0; y < tileMap.height; y++) {
+        for (let y = 0; y < tileMap.width; y++) {
             let newDiv = document.createElement("div");
             newDiv.setAttribute("id", "x."+x+".y."+y);       // Skapar ett unikt ID till div ex: <div id="x2y3"></div>
 
@@ -98,39 +98,39 @@ function drawBoard(tileMap) {       //Skriver ut innehållet i arrayerna som inn
 }
 
 function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som innehåller kartbitarna 
-    for (let x = 0; x < tileMap.width; x++) {    
+    for (let x = 0; x < tileMap.height; x++) {    
         
-        for (let y = 0; y < tileMap.height; y++) {
+        for (let y = 0; y < tileMap.width; y++) {
             /*let newDiv = document.createElement("div");
             newDiv.setAttribute("id","x"+x+"y"+y);      */ // Skapar ett unikt ID till div ex: <div id="x2y3"></div>
 
             //document.getElementById("x"+x+"y"+y).innerHTML = tileMap01.mapGrid[4][4].toString(); //Funkar inte
             
 
-            document.getElementById("x."+x+".y."+y).innerHTML = tileMap.mapGrid[y][x];
+            document.getElementById("x."+x+".y."+y).innerHTML = tileMap.mapGrid[x][y];
 
             //Ge klasser till alla fasta object
-            if (tileMap.mapGrid[y][x] == "W") //Ge unik class till alla väggarna
+            if (tileMap.mapGrid[x][y] == "W") //Ge unik class till alla väggarna
             {                
                 document.getElementById("x."+x+".y."+y).classList.add(Tiles.Wall);
             }
-            else if (tileMap.mapGrid[y][x] == " ") //Ge unik class till alla tomrummen
+            else if (tileMap.mapGrid[x][y] == " ") //Ge unik class till alla tomrummen
             {                
                 document.getElementById("x."+x+".y."+y).classList.add(Tiles.Space);
             }
-            else if (tileMap.mapGrid[y][x] == "G") //Ge unik class till alla målområden
+            else if (tileMap.mapGrid[x][y] == "G") //Ge unik class till alla målområden
             {                
                 document.getElementById("x."+x+".y."+y).classList.add(Tiles.Goal);
             }
 
             //Ge klasser till alla rörliga object
-            if (tileMap.mapGrid[y][x] == "P") //Ge unik class till spelare
+            if (tileMap.mapGrid[x][y] == "P") //Ge unik class till spelare
             {                
                 document.getElementById("x."+x+".y."+y).classList.add(Entities.Character);
-                playerPosition = ".x."+x+".y."+y;
+                playerPosition = "x."+x+".y."+y;
                 //console.log(playerPosition);         //Funkar ok   //Testar om sparats
             }
-            else if (tileMap.mapGrid[y][x] == "B") //Ge unik class till alla lådor (Boxes) och "box i mål class"
+            else if (tileMap.mapGrid[x][y] == "B") //Ge unik class till alla lådor (Boxes) och "box i mål class"
             {                
                 document.getElementById("x."+x+".y."+y).classList.add(Entities.Block, Entities.BlockDone);
             }
@@ -192,6 +192,46 @@ function movement() {
         if (e.keyCode == '38') {
             // up arrow
             console.log("up");
+
+            //Current position
+            //playerCurrentPosition = document.get
+            //playerCurrentPosition.indexOf("x");
+            
+
+            //Next position
+            playerNextposition = document.getElementById(playerCurrentPosition)
+            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
+                       
+            console.log(positionArr)
+            --positionArr[1];    //Minska X med 1 , ju högre upp desto lägre siffra
+            playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
+            //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
+            
+            console.log(positionArr)
+            console.log("PlayerNextPosition: "+playerNextposition);
+            console.log("x: "+ positionArr[1]);
+            console.log("y: "+ positionArr[3]);
+
+            console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
+            console.log("Next position: "+playerNextposition);
+
+            //Brädspels förflyttning
+            document.getElementById(playerCurrentPosition).innerHTML = " ";
+            document.getElementById(playerNext).innerHTML = "P";
+            playerCurrentPosition = playerNextposition;
+            
+            
+            //Testing values
+            console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
+            console.log("Next position: "+playerNextposition);
+
+            //Delar jag tror jag kommer behöva justera in
+            //document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[y][x];
+            //document.getElementById("x"+x+"y"+y).classList.add(Tiles.Space);
+            //document.getElementById("x"+x+"y"+y).classList.add(Tiles.Wall);
+            //document.getElementById("x"+x+"y"+y).classList.add(Entities.Block, Entities.BlockDone);
+
+
         }
         else if (e.keyCode == '40') {
             // down arrow
@@ -209,18 +249,23 @@ function movement() {
             //Next position
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
+                       
             console.log(positionArr)
-            ++positionArr[1];
-            playerNextposition = "x."+positionArr[1]+".y."+positionArr[3];
-
+            --positionArr[3];
+            playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
+            //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
+            
             console.log(positionArr)
-            console.log(playerNextposition);
+            console.log("PlayerNextPosition: "+playerNextposition);
             console.log("x: "+ positionArr[1]);
             console.log("y: "+ positionArr[3]);
 
+            console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
+            console.log("Next position: "+playerNextposition);
+
             //Brädspels förflyttning
             document.getElementById(playerCurrentPosition).innerHTML = " ";
-            document.getElementById(playerNextPosition).innerHTML = "P";
+            document.getElementById(playerNext).innerHTML = "P";
             playerCurrentPosition = playerNextposition;
             
             
