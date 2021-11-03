@@ -6,7 +6,7 @@
 //Global variables
 //var positionFormat = "\"x\"+x+\"y\"+y";   //Funkar inte
 var playerCurrentPosition = "x.11.y.11";  //Spelarens startpunkt x.11.y.11
-var playerNextposition;
+var playerNextposition = "x.11.y.11";
 
 //var player_X_position;  //X och Y var för sig ersätts som en koordinat
 //var player_Y_position;
@@ -219,9 +219,9 @@ function movement() {
             console.log("y: "+ positionArr[3]);
 
             //Brädspels förflyttning
-            //document.getElementById(playerCurrentPosition).innerHTML = replace("P", " ");
-            //document.getElementById(playerNextPosition).innerHTML = str.replace(" ", "P");
-            //playerCurrentPosition = playerNextposition;
+            document.getElementById(playerCurrentPosition).innerHTML = " ";
+            document.getElementById(playerNextPosition).innerHTML = "P";
+            playerCurrentPosition = playerNextposition;
             
             
             //Testing values
