@@ -4,7 +4,8 @@
 // Store the players X & Y position in global variables.
 
 //Global variables
-var playerPosition;
+var playerCurrentPosition;
+var playerNextposition;
 
 //var player_X_position;  //X och Y var för sig ersätts som en koordinat
 //var player_Y_position;
@@ -176,9 +177,6 @@ function drawBoardTest1(tileMapTest1)
 
 */
 
-
-
-
 function movement() {
     const log = document.getElementById('entity-player');
 
@@ -188,7 +186,8 @@ function movement() {
         //log.textContent += ` ${e.code}`;
         //console.log(e);
         e = e || window.event;
-        
+        //let layerText = document. .getElementById("newtext");
+
         if (e.keyCode == '38') {
             // up arrow
             console.log("up");
@@ -198,12 +197,12 @@ function movement() {
             console.log("down")
         }
         else if (e.keyCode == '37') {
-        // left arrow
-        console.log("left");
+            // left arrow
+            console.log("left");
         }
         else if (e.keyCode == '39') {
-        // right arrow
-        console.log("right");
+            // right arrow
+            console.log("right");
         }
     }    
 }
