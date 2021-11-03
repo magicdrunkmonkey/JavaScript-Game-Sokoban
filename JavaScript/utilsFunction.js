@@ -216,7 +216,7 @@ function movement() {
             //Next position box
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");
-            console.log("Box infront of player last turn at: "+positionArr);
+            console.log("Player position before box offset last turn at: "+positionArr);
             --positionArr[1];    //Minska X med 1 , ju högre upp desto lägre siffra
             --positionArr[1];           
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]);
@@ -224,13 +224,13 @@ function movement() {
 
             console.log(positionArr)
             console.log("PlayerNextPosition last turn: "+playerNextposition);
-            console.log("x: "+ positionArr[1]);
-            console.log("y: "+ positionArr[3]);
+            console.log("Box x: "+ positionArr[1]);
+            console.log("Box y: "+ positionArr[3]);
 
             console.log("Current PLayer position before if: "+playerCurrentPosition);         //Testa vad det innehåller
             console.log("Next Player position before if: "+playerNextposition);
             console.log("Current Box position before if: "+boxCurrentPosition);         //Testa vad det innehåller
-            console.log("Next Box position before if: "+boxNextPosition);
+            console.log("boxNextPosition before if: "+boxNextPosition);
 
 
             //Brädspels förflyttning
@@ -245,6 +245,7 @@ function movement() {
                 document.getElementById(playerNextposition).innerHTML = "P";
                 playerCurrentPosition = playerNextposition;
                 document.getElementById(boxNextPosition).innerHTML = "B";
+                boxCurrentPosition= boxNextPosition;
 
             }
             else if (nextMovePlayer !== "W")
@@ -252,7 +253,7 @@ function movement() {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
                 playerCurrentPosition = playerNextposition;
-                console.log("Kört ifsatsen")
+                console.log("Kört ifsatsen");
             }
             
             //Testing values
@@ -260,6 +261,7 @@ function movement() {
             console.log("Current Player NextPosition after if: "+playerNextposition);
             console.log("Current Box position after if: "+boxCurrentPosition);         //Testa vad det innehåller
             console.log("Current box NextPosition after if: "+boxNextPosition);
+            console.log(positionArr);
             //Delar jag tror jag kommer behöva justera in
             //document.getElementById("x"+x+"y"+y).innerHTML = tileMap.mapGrid[y][x];
             //document.getElementById("x"+x+"y"+y).classList.add(Tiles.Space);
