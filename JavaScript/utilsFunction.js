@@ -253,7 +253,7 @@ function movement() {
             }
             else if (nextMovePlayer === "B" && nextMoveBox == "W")
             {
-                
+                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
             }
             else if (nextMovePlayer !== "W" && carryingBox == false)
             {
@@ -324,7 +324,7 @@ function movement() {
             }
             else if (nextMovePlayer === "B" && nextMoveBox == "W")
             {
-                
+                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
             }
             else if (nextMovePlayer != "W" && carryingBox==false)
             {
@@ -383,7 +383,7 @@ function movement() {
             }
             else if (nextMovePlayer === "B" && nextMoveBox == "W")
             {
-                
+                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
             }
             else if (nextMovePlayer != "W" && carryingBox==false)
             {
@@ -445,7 +445,7 @@ function movement() {
             }
             else if (nextMovePlayer === "B" && nextMoveBox == "W")
             {
-                
+                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
             }
             else if (nextMovePlayer != "W" && carryingBox==false)
             {
