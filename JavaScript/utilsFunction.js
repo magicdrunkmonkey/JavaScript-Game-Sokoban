@@ -193,7 +193,7 @@ function movement() {
         //console.log(e);
         e = e || window.event;
         //let layerText = document. .getElementById("newtext");
-        console.clear();
+        //console.clear();
         if (e.keyCode == '38') {
             // up arrow
             
@@ -248,9 +248,14 @@ function movement() {
                 document.getElementById(boxNextPosition).innerHTML = "B";
                 boxCurrentPosition= boxNextPosition;
                 console.log("Kört klart ifsatsen nextMovePlayer === B && nextMoveBox !== W");
+                //carryingBox == true;
 
             }
-            else if (nextMovePlayer !== "W")
+            else if (nextMovePlayer === "B" && nextMoveBox == "W")
+            {
+                
+            }
+            else if (nextMovePlayer !== "W" && carryingBox == false)
             {
                 console.log("Kör ifsatsen nextMovePlayer !== W");
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
@@ -304,18 +309,24 @@ function movement() {
             console.log("Next position: "+playerNextposition);
 
             //Brädspels förflyttning
-            let nextMove = document.getElementById(playerNextposition).textContent;
-            console.log("Temp innehåller innanförflyttning sker: "+nextMove);            
+            let nextMovePlayer = document.getElementById(playerNextposition).textContent;
+            let nextMoveBox = document.getElementById(boxNextPosition).textContent;
+            console.log("Temp innehåller innanförflyttning sker: "+nextMovePlayer);            
             
-            if (nextMove == "B")
+            if (nextMovePlayer === "B" && nextMoveBox !== "W")
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
                 playerCurrentPosition = playerNextposition;
                 document.getElementById(boxNextPosition).innerHTML = "B";
+                
 
             }
-            else if (nextMove != "W")
+            else if (nextMovePlayer === "B" && nextMoveBox == "W")
+            {
+                
+            }
+            else if (nextMovePlayer != "W" && carryingBox==false)
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
@@ -332,15 +343,23 @@ function movement() {
             //playerCurrentPosition = document.get
             //playerCurrentPosition.indexOf("x");            
 
-            //Next position
+            //Next position Player
             playerNextposition = document.getElementById(playerCurrentPosition)
-            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
-                       
+            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]                       
             console.log(positionArr)
             --positionArr[3];    //Minska X med 1 , ju mer vänster desto lägre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
             //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
             
+            //Next position box
+            boxNextPosition = document.getElementById(playerCurrentPosition)
+            positionArr = playerCurrentPosition.split(".");
+            console.log("Box position before: "+positionArr);
+            --positionArr[3];    //Minska X med 1 , ju högre upp desto lägre siffra
+            --positionArr[3];
+            boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]);
+
+            console.log("Box position After: "+positionArr);
             console.log(positionArr)
             console.log("PlayerNextPosition: "+playerNextposition);
             console.log("x: "+ positionArr[1]);
@@ -350,9 +369,23 @@ function movement() {
             console.log("Next position: "+playerNextposition);
 
             //Brädspels förflyttning tom ruta
-            let nextMove = document.getElementById(playerNextposition).textContent;
-            console.log("Temp innehåller innanförflyttning sker: "+nextMove);            
-            if (nextMove != "W")
+            let nextMovePlayer = document.getElementById(playerNextposition).textContent;
+            let nextMoveBox = document.getElementById(boxNextPosition).textContent;
+            console.log("Temp innehåller innanförflyttning sker: "+nextMovePlayer);            
+            if (nextMovePlayer === "B" && nextMoveBox !== "W")
+            {
+                document.getElementById(playerCurrentPosition).innerHTML = " ";            
+                document.getElementById(playerNextposition).innerHTML = "P";
+                playerCurrentPosition = playerNextposition;
+                document.getElementById(boxNextPosition).innerHTML = "B";
+                
+
+            }
+            else if (nextMovePlayer === "B" && nextMoveBox == "W")
+            {
+                
+            }
+            else if (nextMovePlayer != "W" && carryingBox==false)
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
@@ -373,27 +406,48 @@ function movement() {
         else if (e.keyCode == '39') {
             // right arrow
             console.log("right");
-            //Next position
+            //Next position Player
             playerNextposition = document.getElementById(playerCurrentPosition)
-            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
-                       
+            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]                       
             console.log(positionArr)
             ++positionArr[3];    //höja Y med 1 , ju mer höger desto högre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
             //playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]).toString(); //Funkar inte
             
+            //Next position box
+            boxNextPosition = document.getElementById(playerCurrentPosition)
+            positionArr = playerCurrentPosition.split(".");
+            console.log("Box position before: "+positionArr);
+            ++positionArr[3];    //Minska X med 1 , ju högre upp desto lägre siffra
+            ++positionArr[3];
+            boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]);
+
+            //Console kontroll hjälpmedel
             console.log(positionArr)
             console.log("PlayerNextPosition: "+playerNextposition);
             console.log("x: "+ positionArr[1]);
             console.log("y: "+ positionArr[3]);
-
             console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
             console.log("Next position: "+playerNextposition);
 
             //Brädspels förflyttning
-            let nextMove = document.getElementById(playerNextposition).textContent;
-            console.log("Temp innehåller innanförflyttning sker: "+nextMove);            
-            if (nextMove != "W")
+            let nextMovePlayer = document.getElementById(playerNextposition).textContent;
+            let nextMoveBox = document.getElementById(boxNextPosition).textContent;
+            console.log("Temp innehåller innanförflyttning sker: "+nextMovePlayer);            
+            if (nextMovePlayer === "B" && nextMoveBox !== "W")
+            {
+                document.getElementById(playerCurrentPosition).innerHTML = " ";            
+                document.getElementById(playerNextposition).innerHTML = "P";
+                playerCurrentPosition = playerNextposition;
+                document.getElementById(boxNextPosition).innerHTML = "B";
+                
+
+            }
+            else if (nextMovePlayer === "B" && nextMoveBox == "W")
+            {
+                
+            }
+            else if (nextMovePlayer != "W" && carryingBox==false)
             {
                 document.getElementById(playerCurrentPosition).innerHTML = " ";            
                 document.getElementById(playerNextposition).innerHTML = "P";
@@ -404,6 +458,22 @@ function movement() {
     }    
 }
 
+function checkIfAllBlocksInGoal()
+{
+    //Goaltiles
+    let Row1Left = "x.9.y.16";
+    let Row1Right = "x.9.y.17";
+    let Row2Left = "x.10.y.16";
+    let Row2Right = "x.10.y.17";
+    let Row3Left = "x.11.y.16";
+    let Row3Right = "x.11.y.17";
+    console.log("Goal Row1Left: "+Row1Left);
+    console.log("Goal Row1Right: "+Row1Right);
+    console.log("Goal Row2Left: "+Row2Left);
+    console.log("Goal Row2Right: "+Row2Right);
+    console.log("Goal Row3Left: "+Row3Left);
+    console.log("Goal Row3Right: "+Row3Right);
+}
 // REMOVED CODE ARCHIVED
 /*
 function moveright() {
