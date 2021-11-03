@@ -210,11 +210,16 @@ function movement() {
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
             console.log(positionArr)
+            ++positionArr[1];
+            playerNextposition = "x."+positionArr[1]+".y."+positionArr[3];
+
+            console.log(positionArr)
+            console.log(playerNextposition);
             console.log("x: "+ positionArr[1]);
             console.log("y: "+ positionArr[3]);
 
             //Brädspels förflyttning
-            //document.getElementById(playerCurrentPosition).innerHTML = str.replace("P", " ");
+            //document.getElementById(playerCurrentPosition).innerHTML = replace("P", " ");
             //document.getElementById(playerNextPosition).innerHTML = str.replace(" ", "P");
             //playerCurrentPosition = playerNextposition;
             
