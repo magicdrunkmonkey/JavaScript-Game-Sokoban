@@ -209,13 +209,14 @@ function movement() {
             //Next position
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");
+            console.log(positionArr)
             console.log("x: "+ positionArr[1]);
-            console.log("y: "+ positionArr[2]);
+            console.log("y: "+ positionArr[3]);
 
-            //Städa föregående position
+            //Brädspels förflyttning
             //document.getElementById(playerCurrentPosition).innerHTML = str.replace("P", " ");
-            
-
+            //document.getElementById(playerNextPosition).innerHTML = str.replace(" ", "P");
+            //playerCurrentPosition = playerNextposition;
             
             
             //Testing values
