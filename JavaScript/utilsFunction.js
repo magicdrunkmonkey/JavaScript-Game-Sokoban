@@ -216,10 +216,12 @@ function movement() {
             console.log("Next position: "+playerNextposition);
 
             //Brädspels förflyttning
-            document.getElementById(playerCurrentPosition).innerHTML = " ";            
-            document.getElementById(playerNextposition).innerHTML = "P";
-            playerCurrentPosition = playerNextposition;
-            
+            if((document.getElementById(playerNextposition).textContent) !== "w")
+            {
+                document.getElementById(playerCurrentPosition).innerHTML = " ";            
+                document.getElementById(playerNextposition).innerHTML = "P";
+                playerCurrentPosition = playerNextposition;
+            }
             
             //Testing values
             console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
