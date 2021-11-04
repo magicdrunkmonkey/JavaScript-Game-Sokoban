@@ -23,6 +23,10 @@ div.tile-wall {
     background: rgb(43, 5, 212);
 }
 
+div.tile-goal {
+    background: lightgreen;
+}
+
 div.entity-player{
     color: yellow;
 }
