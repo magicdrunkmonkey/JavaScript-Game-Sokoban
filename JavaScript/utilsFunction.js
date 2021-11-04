@@ -196,12 +196,20 @@ function checkIfAllBlocksInGoal()
     let parkedBox2R = document.getElementById(Row2Right).textContent;
     let parkedBox3L = document.getElementById(Row3Left).textContent;
     let parkedBox3R = document.getElementById(Row3Right).textContent;
-    console.log("Goal Row1Left: "+Row1Left);
-    console.log("Goal Row1Right: "+Row1Right);
-    console.log("Goal Row2Left: "+Row2Left);
-    console.log("Goal Row2Right: "+Row2Right);
-    console.log("Goal Row3Left: "+Row3Left);
-    console.log("Goal Row3Right: "+Row3Right);
+
+    console.log("Set variable Row1Left: "+Row1Left);
+    console.log("Set variable Row1Right: "+Row1Right);
+    console.log("Set variable Row2Left: "+Row2Left);
+    console.log("Set variable Row2Right: "+Row2Right);
+    console.log("Set variable Row3Left: "+Row3Left);
+    console.log("Set variable Row3Right: "+Row3Right);
+
+    console.log("Set variable Row1Left: "+parkedBox1L);
+    console.log("Set variable Row1Right: "+parkedBox1R);
+    console.log("Set variable Row2Left: "+parkedBox2L);
+    console.log("Set variable Row2Right: "+parkedBox2R);
+    console.log("Set variable Row3Left: "+parkedBox3L);
+    console.log("Set variable Row3Right: "+parkedBox3R);
     
     if (parkedBox1L=="B" && parkedBox1R=="B" && parkedBox2L=="B" &&
         parkedBox2R=="B" && parkedBox3L=="B" && parkedBox3R=="B")
@@ -224,7 +232,7 @@ function movement() {
         //console.clear();
         if (e.keyCode == '38') {
             // up arrow
-            
+            //alert("up");       //Testing alert
             console.log("up");
 
             //Current position
@@ -297,6 +305,7 @@ function movement() {
                 console.log("Kört klart ifsatsen nextMovePlayer !== W");
             }
             
+            checkIfAllBlocksInGoal();
             //Testing values
             console.log("Current Player position after if: "+playerCurrentPosition);         //Testa vad det innehåller
             console.log("Current Player NextPosition after if: "+playerNextposition);
@@ -370,7 +379,7 @@ function movement() {
                 playerCurrentPosition = playerNextposition;
                 console.log("Kört ifsatsen")
             }
-            
+            checkIfAllBlocksInGoal();
         }
         else if (e.keyCode == '37') {
             // left arrow
@@ -438,7 +447,7 @@ function movement() {
                 playerCurrentPosition = playerNextposition;
                 console.log("Kört ifsatsen")
             }            
-            
+            checkIfAllBlocksInGoal();
             //Testing values
             console.log("Current position: "+playerCurrentPosition);         //Testa vad det innehåller
             console.log("Next position: "+playerNextposition);
@@ -504,6 +513,7 @@ function movement() {
                 playerCurrentPosition = playerNextposition;
                 console.log("Kört ifsatsen")
             }
+            checkIfAllBlocksInGoal();
         }
     }    
     checkIfAllBlocksInGoal();
