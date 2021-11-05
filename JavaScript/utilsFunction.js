@@ -161,7 +161,7 @@ function movement() {
             --positionArr[1];                                       //Minska X med 1 , ju högre upp desto lägre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);                        
 
-            //Next position box
+            //Next position box med offset
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
             --positionArr[1];                                       //Minska X med 1 , ju högre upp desto lägre siffra
@@ -179,7 +179,7 @@ function movement() {
             ++positionArr[1];                                       //Höja X med 1 , ju lägre position desto högre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);            
             
-            //Next position box
+            //Next position box med offset
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
             ++positionArr[1];                                       //Höja X med 1 , ju lägre ner desto högre siffra
@@ -197,7 +197,7 @@ function movement() {
             --positionArr[3];                                       //Minska Y med 1 , ju mer vänster desto lägre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);            
             
-            //Next position box
+            //Next position box med offset
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
             --positionArr[3];                                       //Minska Y med 1 , ju mer vänster desto lägre siffra
@@ -215,7 +215,7 @@ function movement() {
             ++positionArr[3];                                       //Höja Y med 1 , ju mer höger desto högre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
                         
-            //Next position box
+            //Next position box med offset
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
             ++positionArr[3];                                       //Höja Y med 1 , ju mer höger desto högre siffra
