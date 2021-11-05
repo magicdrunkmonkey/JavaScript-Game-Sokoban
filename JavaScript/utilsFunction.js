@@ -157,14 +157,14 @@ function movement() {
 
             //Next position player
             playerNextposition = document.getElementById(playerCurrentPosition)
-            let positionArr = playerCurrentPosition.split(".");   //Har det formatet x.11.y.11 gör arrayen [x,11,y,11] 
-            --positionArr[1];    //Minska X med 1 , ju högre upp desto lägre siffra
+            let positionArr = playerCurrentPosition.split(".");     //Har det formatet x.11.y.11 gör arrayen [x,11,y,11] 
+            --positionArr[1];                                       //Minska X med 1 , ju högre upp desto lägre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);                        
 
             //Next position box
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
-            --positionArr[1];    //Minska X med 1 , ju högre upp desto lägre siffra
+            --positionArr[1];                                       //Minska X med 1 , ju högre upp desto lägre siffra
             --positionArr[1];           
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]); 
 
@@ -175,14 +175,14 @@ function movement() {
             
             //Next position
             playerNextposition = document.getElementById(playerCurrentPosition)
-            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
-            ++positionArr[1];    //Höja X med 1 , ju lägre position desto högre siffra
+            let positionArr = playerCurrentPosition.split(".");     //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
+            ++positionArr[1];                                       //Höja X med 1 , ju lägre position desto högre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);            
             
             //Next position box
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
-            ++positionArr[1];    //Minska X med 1 , ju högre upp desto lägre siffra
+            ++positionArr[1];                                       //Höja X med 1 , ju lägre ner desto högre siffra
             ++positionArr[1];
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]); 
 
@@ -193,14 +193,14 @@ function movement() {
 
             //Next position Player
             playerNextposition = document.getElementById(playerCurrentPosition)
-            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11] 
-            --positionArr[3];    //Minska X med 1 , ju mer vänster desto lägre siffra
+            let positionArr = playerCurrentPosition.split(".");     //Har formatet x.11.y.11 gör arrayen [x,11,y,11] 
+            --positionArr[3];                                       //Minska Y med 1 , ju mer vänster desto lägre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);            
             
             //Next position box
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
-            --positionArr[3];    //Minska X med 1 , ju högre upp desto lägre siffra
+            --positionArr[3];                                       //Minska Y med 1 , ju mer vänster desto lägre siffra
             --positionArr[3];
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]);
 
@@ -211,14 +211,14 @@ function movement() {
             
             //Next position Player
             playerNextposition = document.getElementById(playerCurrentPosition)
-            let positionArr = playerCurrentPosition.split(".");   //Har formatet x.11.y.11 gör arrayen [x,11,y,11] 
-            ++positionArr[3];    //höja Y med 1 , ju mer höger desto högre siffra
+            let positionArr = playerCurrentPosition.split(".");     //Har formatet x.11.y.11 gör arrayen [x,11,y,11] 
+            ++positionArr[3];                                       //Höja Y med 1 , ju mer höger desto högre siffra
             playerNextposition = ("x."+positionArr[1]+".y."+positionArr[3]);
                         
             //Next position box
             boxNextPosition = document.getElementById(playerCurrentPosition)
             positionArr = playerCurrentPosition.split(".");            
-            ++positionArr[3];    //Minska X med 1 , ju högre upp desto lägre siffra
+            ++positionArr[3];                                       //Höja Y med 1 , ju mer höger desto högre siffra
             ++positionArr[3];
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]);
 
