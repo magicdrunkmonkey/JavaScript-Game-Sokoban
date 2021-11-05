@@ -148,7 +148,7 @@ function movement() {
         else if (e.keyCode == '40') {
             // down arrow
             
-            //Next position
+            //Next position player
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");     //Har formatet x.11.y.11 gör arrayen [x,11,y,11]
             ++positionArr[1];                                       //Höja X med 1 , ju lägre position desto högre siffra
@@ -166,7 +166,7 @@ function movement() {
         else if (e.keyCode == '37') {
             // left arrow                        
 
-            //Next position Player
+            //Next position player
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");     //Har formatet x.11.y.11 gör arrayen [x,11,y,11] 
             --positionArr[3];                                       //Minska Y med 1 , ju mer vänster desto lägre siffra
@@ -184,7 +184,7 @@ function movement() {
         else if (e.keyCode == '39') {
             // right arrow
             
-            //Next position Player
+            //Next position player
             playerNextposition = document.getElementById(playerCurrentPosition)
             let positionArr = playerCurrentPosition.split(".");     //Har formatet x.11.y.11 gör arrayen [x,11,y,11] 
             ++positionArr[3];                                       //Höja Y med 1 , ju mer höger desto högre siffra
