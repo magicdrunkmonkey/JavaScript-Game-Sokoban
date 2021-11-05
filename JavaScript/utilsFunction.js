@@ -91,8 +91,62 @@ function checkIfAllBlocksInGoal()
 
 function movement() {
     const log = document.getElementById('entity-player');
-
     document.addEventListener('keyup', movementChange);
+
+    function checkIfAllBlocksInGoal()
+    {
+        //Goaltiles
+        let Row1Left = "x.9.y.16";
+        let Row1Right = "x.9.y.17";
+        let Row2Left = "x.10.y.16";
+        let Row2Right = "x.10.y.17";
+        let Row3Left = "x.11.y.16";
+        let Row3Right = "x.11.y.17";
+
+        let parkedBox1L = document.getElementById(Row1Left).textContent;
+        let parkedBox1R = document.getElementById(Row1Right).textContent;
+        let parkedBox2L = document.getElementById(Row2Left).textContent;
+        let parkedBox2R = document.getElementById(Row2Right).textContent;
+        let parkedBox3L = document.getElementById(Row3Left).textContent;
+        let parkedBox3R = document.getElementById(Row3Right).textContent;  
+        
+        if (parkedBox1L=="B" && parkedBox1R=="B" && parkedBox2L=="B" &&
+            parkedBox2R=="B" && parkedBox3L=="B" && parkedBox3R=="B")
+        {
+            alert("You have won the game!");
+        }
+    }
+
+    function boardMovement()
+    {
+        //Brädspels förflyttning
+        let nextMovePlayer = document.getElementById(playerNextposition).textContent;
+        let nextMoveBox = document.getElementById(boxNextPosition).textContent;
+        
+        if (nextMovePlayer === "B" && nextMoveBox === "B")
+        {
+            //Enda lösning jag kom på som lådan inte raderar andra lådor vid flytt
+        }
+        else if (nextMovePlayer === "B" && nextMoveBox !== "W")
+        {                                
+            document.getElementById(playerCurrentPosition).innerHTML = " ";            
+            document.getElementById(playerNextposition).innerHTML = "P";
+            playerCurrentPosition = playerNextposition;
+            document.getElementById(boxNextPosition).innerHTML = "B";
+            boxCurrentPosition= boxNextPosition;                 
+        }            
+        else if (nextMovePlayer === "B" && nextMoveBox == "W")
+        {
+            //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
+        }
+        else if (nextMovePlayer !== "W" && carryingBox == false)
+        {
+            document.getElementById(playerCurrentPosition).innerHTML = " ";            
+            document.getElementById(playerNextposition).innerHTML = "P";
+            playerCurrentPosition = playerNextposition;                
+        }        
+        checkIfAllBlocksInGoal();
+    }
     
     function movementChange(e) {
         
@@ -114,35 +168,7 @@ function movement() {
             --positionArr[1];           
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]); 
 
-            //Brädspels förflyttning
-            let nextMovePlayer = document.getElementById(playerNextposition).textContent;
-            let nextMoveBox = document.getElementById(boxNextPosition).textContent;
-            console.log("nextMovePlayer innehåll innan förflyttning: "+nextMovePlayer);  
-            console.log("nextMoveBox innehåll innan förflyttning: "+nextMoveBox);
-            if (nextMovePlayer === "B" && nextMoveBox === "B")
-            {
-                //Enda lösning jag kom på som lådan inte raderar andra lådor vid flytt
-            }
-            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
-            {                                
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;
-                document.getElementById(boxNextPosition).innerHTML = "B";
-                boxCurrentPosition= boxNextPosition;                 
-            }            
-            else if (nextMovePlayer === "B" && nextMoveBox == "W")
-            {
-                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
-            }
-            else if (nextMovePlayer !== "W" && carryingBox == false)
-            {
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;                
-            }
-            
-            checkIfAllBlocksInGoal();            
+            boardMovement();           
         }
         else if (e.keyCode == '40') {
             // down arrow
@@ -160,32 +186,7 @@ function movement() {
             ++positionArr[1];
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]); 
 
-            //Brädspels förflyttning
-            let nextMovePlayer = document.getElementById(playerNextposition).textContent;
-            let nextMoveBox = document.getElementById(boxNextPosition).textContent;                        
-            
-            if (nextMovePlayer === "B" && nextMoveBox === "B")
-            {
-                //Enda lösning jag kom på som lådan inte raderar andra lådor vid flytt
-            }
-            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
-            {
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;
-                document.getElementById(boxNextPosition).innerHTML = "B";
-            }
-            else if (nextMovePlayer === "B" && nextMoveBox == "W")
-            {
-                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
-            }
-            else if (nextMovePlayer != "W" && carryingBox==false)
-            {
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;                
-            }
-            checkIfAllBlocksInGoal();
+            boardMovement();
         }
         else if (e.keyCode == '37') {
             // left arrow                        
@@ -203,31 +204,7 @@ function movement() {
             --positionArr[3];
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]);
 
-            //Brädspels förflyttning tom ruta
-            let nextMovePlayer = document.getElementById(playerNextposition).textContent;
-            let nextMoveBox = document.getElementById(boxNextPosition).textContent; 
-            if (nextMovePlayer === "B" && nextMoveBox === "B")
-            {
-                //Enda lösning jag kom på som lådan inte raderar andra lådor vid flytt
-            }
-            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
-            {
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;
-                document.getElementById(boxNextPosition).innerHTML = "B";
-            }            
-            else if (nextMovePlayer === "B" && nextMoveBox === "W" )
-            {
-                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
-            }
-            else if (nextMovePlayer != "W" && carryingBox==false)
-            {
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;                
-            }            
-            checkIfAllBlocksInGoal();            
+            boardMovement();            
         }
         else if (e.keyCode == '39') {
             // right arrow
@@ -245,31 +222,7 @@ function movement() {
             ++positionArr[3];
             boxNextPosition = ("x."+positionArr[1]+".y."+positionArr[3]);
 
-            //Brädspels förflyttning
-            let nextMovePlayer = document.getElementById(playerNextposition).textContent;
-            let nextMoveBox = document.getElementById(boxNextPosition).textContent;                        
-            if (nextMovePlayer === "B" && nextMoveBox === "B")
-            {
-                //Enda lösning jag kom på som lådan inte raderar andra lådor vid flytt
-            }
-            else if (nextMovePlayer === "B" && nextMoveBox !== "W")
-            {
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;
-                document.getElementById(boxNextPosition).innerHTML = "B";
-            }
-            else if (nextMovePlayer === "B" && nextMoveBox == "W")
-            {
-                //Enda lösning jag kom på som begränsar att lådan knuffas genom väggen
-            }
-            else if (nextMovePlayer != "W" && carryingBox==false)
-            {
-                document.getElementById(playerCurrentPosition).innerHTML = " ";            
-                document.getElementById(playerNextposition).innerHTML = "P";
-                playerCurrentPosition = playerNextposition;               
-            }
-            checkIfAllBlocksInGoal();
+            boardMovement();
         }
     }  
 }
