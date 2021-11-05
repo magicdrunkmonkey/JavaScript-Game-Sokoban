@@ -64,31 +64,6 @@ function addMapPieces(tileMap) {       //Skriver ut innehållet i arrayerna som 
     }    
 }
 
-function checkIfAllBlocksInGoal()
-{
-    //Goaltiles
-    let Row1Left = "x.9.y.16";
-    let Row1Right = "x.9.y.17";
-    let Row2Left = "x.10.y.16";
-    let Row2Right = "x.10.y.17";
-    let Row3Left = "x.11.y.16";
-    let Row3Right = "x.11.y.17";
-
-    let parkedBox1L = document.getElementById(Row1Left).textContent;
-    let parkedBox1R = document.getElementById(Row1Right).textContent;
-    let parkedBox2L = document.getElementById(Row2Left).textContent;
-    let parkedBox2R = document.getElementById(Row2Right).textContent;
-    let parkedBox3L = document.getElementById(Row3Left).textContent;
-    let parkedBox3R = document.getElementById(Row3Right).textContent;  
-    
-    if (parkedBox1L=="B" && parkedBox1R=="B" && parkedBox2L=="B" &&
-        parkedBox2R=="B" && parkedBox3L=="B" && parkedBox3R=="B")
-    {
-        alert("You have won the game!");
-    }
-
-}
-
 function movement() {
     const log = document.getElementById('entity-player');
     document.addEventListener('keyup', movementChange);
